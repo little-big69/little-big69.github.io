@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width'>
+  <title>Culina - Recipe Management App</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      padding: 1em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fafafa;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2em;
+      padding: 2em 0;
+      background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+      border-radius: 15px;
+      margin-bottom: 3em;
+    }
+    
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin-bottom: 1em;
+      box-shadow: 0 4px 15px rgba(248, 111, 94, 0.3);
+    }
+    
+    .app-title {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin: 0.5em 0;
+      color: #f86f5e;
+      text-shadow: 0 2px 4px rgba(248, 111, 94, 0.1);
+    }
+    
+    .app-subtitle {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 1em;
+      font-weight: 300;
+    }
+    
+    .description {
+      margin: 2em 0;
+      text-align: center;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    
+    .links-section {
+      margin: 3em 0;
+      text-align: center;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .links-section h2 {
+      color: #f86f5e;
+      margin-bottom: 1em;
+      font-weight: 600;
+    }
+    
+    .link-button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 0.5em;
+      background: linear-gradient(135deg, #f86f5e 0%, #e55a4a 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      box-shadow: 0 4px 15px rgba(248, 111, 94, 0.3);
+    }
+    
+    .link-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(248, 111, 94, 0.4);
+      background: linear-gradient(135deg, #e55a4a 0%, #d44936 100%);
+    }
+    
+    .contact {
+      margin-top: 3em;
+      padding: 2em;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      color: #666;
+    }
+    
+    
+    .carousel-container {
+      margin: 3em 0;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    
+    .carousel-container h2 {
+      color: #f86f5e;
+      margin-bottom: 1.5em;
+      font-weight: 600;
+    }
+    
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+    
+    .carousel {
+      max-width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(248, 111, 94, 0.2);
+    }
+    
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .carousel-nav {
+      background: rgba(248, 111, 94, 0.8);
+      color: white;
+      border: none;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 32px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    
+    .carousel-nav:hover {
+      background: rgba(248, 111, 94, 1);
+      transform: scale(1.1);
+    }
+    
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 1em;
+      gap: 0.5em;
+    }
+    
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(248, 111, 94, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+      background: #f86f5e;
+      transform: scale(1.2);
+    }
+    
+    @media (max-width: 600px) {
+      .app-title {
+        font-size: 2em;
+      }
+      
+      .app-icon {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .link-button {
+        display: block;
+        margin: 0.5em auto;
+        width: 200px;
+      }
+      
+      .description, .carousel-container, .links-section, .contact {
+        padding: 1.5em;
+      }
+      
+      .carousel-wrapper {
+        flex-direction: column;
+        gap: 1.5em;
+        max-width: 100%;
+      }
+      
+      .carousel {
+        max-width: 250px;
+      }
+      
+      .carousel-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <img src="Icon.png" alt="Culina App Icon" class="app-icon">
+    <h1 class="app-title">Culina</h1>
+    <p class="app-subtitle">Your Personal Recipe Management Companion</p>
+  </div>
+
+  <div class="description">
+    <p><strong>Culina</strong> is an elegant and intuitive iOS app designed to help you organize, discover, and enjoy your favorite recipes. Whether you're a seasoned chef or just starting your culinary journey, Culina provides the tools you need to make cooking more enjoyable and organized.</p>
+  </div>
+
+  <div class="carousel-container">
+    <h2>App Screenshots</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-nav" onclick="prevSlide()">‹</button>
+      
+      <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+          <div class="carousel-slide">
+            <img src="screenshot1.png" alt="Recipe Collection">
+          </div>
+          <div class="carousel-slide">
+            <img src="screenshot2.png" alt="Recipe Details">
+          </div>
+          <div class="carousel-slide">
+            <img src="screenshot3.png" alt="Week Planning">
+          </div>
+          <div class="carousel-slide">
+            <img src="screenshot4.png" alt="Easy Import">
+          </div>
+        </div>
+      </div>
+      
+      <button class="carousel-nav" onclick="nextSlide()">›</button>
+    </div>
+    
+    <div class="carousel-indicators">
+      <span class="carousel-dot active" onclick="currentSlide(1)"></span>
+      <span class="carousel-dot" onclick="currentSlide(2)"></span>
+      <span class="carousel-dot" onclick="currentSlide(3)"></span>
+      <span class="carousel-dot" onclick="currentSlide(4)"></span>
+    </div>
+  </div>
+
+  <div class="links-section">
+    <h2>Legal Information</h2>
+    <p>Please review our legal documents for important information about using Culina:</p>
+    
+    <a href="privacy.html" class="link-button">Privacy Policy</a>
+    <a href="terms.html" class="link-button">Terms &amp; Conditions</a>
+  </div>
+
+  <div class="contact">
+    <p><strong>Developer:</strong> David Rodrigues</p>
+    <p><strong>Contact:</strong> little.big69@icloud.com</p>
+    <p>Culina is available as a freemium service on the App Store.</p>
+    <p><em>Made with ❤️ for cooking enthusiasts</em></p>
+  </div>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      const carouselInner = document.getElementById('carouselInner');
+      
+      // Ensure index is within bounds
+      if (index >= totalSlides) currentSlideIndex = 0;
+      if (index < 0) currentSlideIndex = totalSlides - 1;
+      
+      // Move carousel
+      const translateX = -currentSlideIndex * 100;
+      carouselInner.style.transform = `translateX(${translateX}%)`;
+      
+      // Update dots
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentSlideIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlideIndex++;
+      if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+      showSlide(currentSlideIndex);
+    }
+
+    function prevSlide() {
+      currentSlideIndex--;
+      if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+      showSlide(currentSlideIndex);
+    }
+
+    function currentSlide(index) {
+      currentSlideIndex = index - 1;
+      showSlide(currentSlideIndex);
+    }
+
+    // Auto-advance carousel every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Initialize
+    showSlide(0);
+  </script>
+</body>
+
+</html>
