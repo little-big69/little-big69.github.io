@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>spaceback — Open-source software</title>
+<style>body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 1em; max-width: 44em; margin: auto; line-height: 1.5; } pre { white-space: pre-wrap; font-size: 0.85em; background: #f4f4f4; padding: 1em; } code { font-size: 0.9em; overflow-wrap: anywhere; }</style>
+</head>
+<body>
+<h1>Open-source software</h1>
+<p>spaceback for Android, iPhone and iPad is built with the open-source software listed on this page. Thank you to everyone who wrote it.</p>
+
+<h2>FFmpeg</h2>
+<p>spaceback uses the <a href="https://ffmpeg.org">FFmpeg</a> libraries, version 8.1.2, to read and compress videos. This software uses libraries from the FFmpeg project under the <a href="https://www.gnu.org/licenses/lgpl-3.0.html">GNU Lesser General Public License, version 3</a> or later. That licence is a set of permissions added to the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License, version 3</a>, whose text applies with it. FFmpeg is owned by its authors, not by spaceback.</p>
+<p>The libraries are built without any change of ours, with no GPL or non-free component enabled, and are shipped as separate shared libraries that the app loads when it runs.</p>
+<p>The source code they are built from:</p>
+<ul>
+<li>FFmpeg: <a href="https://github.com/arthenica/FFmpeg/tree/n8.1.2">github.com/arthenica/FFmpeg</a>, tag <code>n8.1.2</code>.</li>
+<li>Build scripts: <a href="https://github.com/arthenica/ffmpeg-kit-next/tree/v8.1.0">github.com/arthenica/ffmpeg-kit-next</a>, tag <code>v8.1.0</code>.</li>
+<li>Android build: <code>./nix-android.sh -p android-r27d --disable-arm-v7a --disable-arm-v7a-neon --disable-x86 --enable-libsvtav1 --enable-android-media-codec</code></li>
+<li>iPhone and iPad build: <code>./nix-ios.sh -p xcode26 -x --spm --disable-arm64e --disable-x86-64-mac-catalyst --disable-arm64-mac-catalyst --disable-x86-64 --enable-libsvtav1 --enable-ios-videotoolbox</code></li>
+</ul>
+<p>If you cannot reach these, write to <a href="mailto:little.big69@icloud.com">little.big69@icloud.com</a> and we will send you the source code.</p>
+
+<h2>FFmpegKit</h2>
+<p><a href="https://github.com/arthenica/ffmpeg-kit-next/tree/v8.1.0">ffmpeg-kit-next</a> 8.1.0 is what runs FFmpeg inside the app. It is licensed under the <a href="https://github.com/arthenica/ffmpeg-kit-next/blob/v8.1.0/LICENSE">GNU Lesser General Public License, version 3</a>. Its source is the repository above, at the same tag.</p>
+
+<h2>SVT-AV1</h2>
+<p>The FFmpeg libraries include the <a href="https://github.com/arthenica/svt-av1/tree/v4.1.0">SVT-AV1</a> encoder, version 4.1.0, under the licence below and the <a href="https://github.com/arthenica/svt-av1/blob/v4.1.0/PATENTS.md">Alliance for Open Media Patent License 1.0</a>.</p>
+<pre>BSD 3-Clause Clear License
+The Clear BSD License
+
+Copyright (c) 2021, Alliance for Open Media
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted (subject to the limitations in the disclaimer below)
+provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the Alliance for Open Media nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY&#x27;S PATENT RIGHTS ARE GRANTED BY THIS LICENSE.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+
+<h2>Other components</h2>
+<ul>
+<li>RevenueCat Purchases, for <a href="https://github.com/RevenueCat/purchases-android/blob/main/LICENSE">Android</a> and <a href="https://github.com/RevenueCat/purchases-ios/blob/main/LICENSE">iPhone and iPad</a>: MIT License. Copyright (c) 2018 and 2024 RevenueCat, Inc.</li>
+<li><a href="https://github.com/Dimillian/AppRouter/blob/main/LICENSE">AppRouter</a> (iPhone and iPad): MIT License. Copyright (c) 2025 Thomas Ricouard.</li>
+<li>AndroidX and Jetpack libraries (Compose, Media3, Room, WorkManager, Navigation, Lifecycle), Material Components for Android, Kotlin and kotlinx.coroutines (Android): <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>. Copyright The Android Open Source Project, Google LLC and JetBrains s.r.o.</li>
+<li>LLVM libc++ (Android): <a href="https://llvm.org/LICENSE.txt">Apache License, version 2.0, with LLVM Exceptions</a>.</li>
+</ul>
+<p>The MIT License, which applies to the components marked so above:</p>
+<pre>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+
+<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+</body>
+</html>
