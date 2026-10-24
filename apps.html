@@ -169,5 +169,27 @@
   <p class="links"><a href="./">Home</a><a href="terms.html">Terms of use</a></p>
   <p>© 2026 Little Big</p>
 </footer>
+
+<script>
+  // Opened from an app: apps.html?platform=ios|android&exclude=<row id>
+  // shows only the apps available on that platform, without the app it was opened from.
+  const params = new URLSearchParams(location.search);
+  const store = { ios: 'apps.apple.com', android: 'play.google.com' }[params.get('platform')];
+  if (store) {
+    for (const link of document.querySelectorAll('.stores a')) {
+      if (new URL(link.href).hostname !== store) link.remove();
+      else link.classList.remove('ghost'); // The only store left gets the main button style
+    }
+    document.querySelector('.intro p').textContent = store === 'apps.apple.com'
+      ? 'Everything little big makes for iPhone and iPad.'
+      : 'Everything little big makes for Android.';
+  }
+  for (const row of document.querySelectorAll('.row')) {
+    if (!row.querySelector('.stores a') || row.id === params.get('exclude')) row.remove();
+  }
+  for (const group of document.querySelectorAll('.group')) {
+    if (!group.querySelector('.row')) group.remove();
+  }
+</script>
 </body>
 </html>
