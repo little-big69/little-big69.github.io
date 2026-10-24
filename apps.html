@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All apps – little big</title>
+<meta name="description" content="Every little big app for iPhone, iPad and Android, with support and privacy pages.">
+<meta name="theme-color" content="#02142e">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .intro { padding: 4rem 0 1rem; }
+  .intro h1 { font-size: clamp(2.5rem, 7vw, 4.25rem); }
+  .intro p { color: var(--mist); font-size: 1.2rem; margin-top: .75rem; }
+  .group { padding-top: 3rem; }
+  .group h2 { font-size: 1.6rem; letter-spacing: -.015em; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
+  .list { list-style: none; margin: 0 0 1rem; padding: 0; }
+  .row {
+    display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 0 1.25rem; align-items: center;
+    padding: 1.25rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 4.5rem;
+  }
+  .row .icon { width: 4.5rem; }
+  .row h3 { font-size: 1.2rem; letter-spacing: -.01em; }
+  .row p { color: var(--mist); }
+  .row .links { font-size: .9rem; margin-top: .3rem; }
+  .row .links a + a { margin-left: 1rem; }
+  .row:target h3 { color: var(--cyan); }
+  /* App Store and Google Play stay in their own columns down the list */
+  .row .stores { display: grid; grid-template-columns: repeat(2, 8.5rem); }
+  .row .btn { justify-content: center; }
+  .row .ghost { grid-column: 2; }
+  @media (max-width: 40rem) {
+    .row { grid-template-columns: 3.75rem 1fr; }
+    .row .icon { width: 3.75rem; align-self: start; }
+    .row .stores { grid-column: 2; margin-top: .8rem; display: flex; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+  <symbol id="i-apple" viewBox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></symbol>
+</svg>
+<header class="nav">
+  <a class="brand" href="./"><img src="assets/logo-mark.png" alt="">little big</a>
+  <nav><a href="apps.html" aria-current="page">All apps</a></nav>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <h1>All apps</h1>
+    <p>Everything little big makes, for iPhone, iPad and Android.</p>
+  </div>
+
+  <section class="group">
+    <h2>Games and game night</h2>
+    <ul class="list">
+      <li class="row" id="skyjo-companion">
+        <img class="icon" src="assets/icons/skyjo-companion.png" alt="">
+        <div><h3>Skyjo Companion</h3><p>Scorekeeper for Skyjo</p>
+          <p class="links"><a href="skyjo-companion/">Support</a><a href="skyjo-companion/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6753746299" aria-label="Skyjo Companion on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.littlebig.skyjo.companion" aria-label="Skyjo Companion on Google Play"><svg aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+        </div>
+      </li>
+      <li class="row" id="take6-companion">
+        <img class="icon" src="assets/icons/take6-companion.png" alt="">
+        <div><h3>Take 6! Companion</h3><p>Scorekeeper for Take 6!</p>
+          <p class="links"><a href="take6-companion/">Support</a><a href="take6-companion/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6754718242" aria-label="Take 6! Companion on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.littlebig.take6.companion" aria-label="Take 6! Companion on Google Play"><svg aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+        </div>
+      </li>
+      <li class="row" id="flip7-companion">
+        <img class="icon" src="assets/icons/flip7-companion.png" alt="">
+        <div><h3>Flip 7 Score Companion</h3><p>Scorekeeper for Flip 7</p>
+          <p class="links"><a href="flip7-companion/">Support</a><a href="flip7-companion/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6811053077" aria-label="Flip 7 Score Companion on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.littlebig.flip7.companion" aria-label="Flip 7 Score Companion on Google Play"><svg aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+        </div>
+      </li>
+      <li class="row" id="guess-the-poster">
+        <img class="icon" src="assets/icons/guess-the-poster.png" alt="">
+        <div><h3>Guess The Poster – Challenge</h3><p>Guess movies from posters</p>
+          <p class="links"><a href="guess-the-poster/">Support</a><a href="guess-the-poster/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6742102553" aria-label="Guess The Poster on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group">
+    <h2>Everyday tools</h2>
+    <ul class="list">
+      <li class="row" id="spaceback">
+        <img class="icon" src="assets/icons/spaceback.png" alt="">
+        <div><h3>spaceback.</h3><p>Shrink videos, free up storage</p>
+          <p class="links"><a href="spaceback/">Support</a><a href="spaceback/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.littlebig.spaceback" aria-label="spaceback on Google Play"><svg aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+        </div>
+      </li>
+      <li class="row" id="sandman">
+        <img class="icon" src="assets/icons/sandman.png" alt="">
+        <div><h3>Sandman: Sleep Breathing</h3><p>Breathing guide for deep sleep</p>
+          <p class="links"><a href="sandman/">Support</a><a href="sandman/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6784185872" aria-label="Sandman on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.littlebig.sandman" aria-label="Sandman on Google Play"><svg aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+        </div>
+      </li>
+      <li class="row" id="altimeter">
+        <img class="icon" src="assets/icons/altimeter.png" alt="">
+        <div><h3>Altimeter Buddy</h3><p>Follow your elevation</p>
+          <p class="links"><a href="altimeter/">Support</a><a href="altimeter/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6757496804" aria-label="Altimeter Buddy on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+        </div>
+      </li>
+      <li class="row" id="ral">
+        <img class="icon" src="assets/icons/ral.png" alt="">
+        <div><h3>RAL Palette</h3><p>The complete RAL color palette</p>
+          <p class="links"><a href="ral/">Support</a><a href="ral/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6757422841" aria-label="RAL Palette on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+        </div>
+      </li>
+      <li class="row" id="radiocode">
+        <img class="icon" src="assets/icons/radiocode.png" alt="">
+        <div><h3>Radio Code: Renault Unlock</h3><p>Renault radio code generator</p>
+          <p class="links"><a href="radiocode/">Support</a><a href="radiocode/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6753014276" aria-label="Radio Code on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="group">
+    <h2>Money and work</h2>
+    <ul class="list">
+      <li class="row" id="loan-simulator">
+        <img class="icon" src="assets/icons/loan-simulator.png" alt="">
+        <div><h3>Loan &amp; Capacity Simulator</h3><p>Simulate and manage your loans</p>
+          <p class="links"><a href="loan-simulator/">Support</a><a href="loan-simulator/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6670725492" aria-label="Loan &amp; Capacity Simulator on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+        </div>
+      </li>
+      <li class="row" id="pcg">
+        <img class="icon" src="assets/icons/pcg.png" alt="">
+        <div><h3>Plan Comptable Général – PCG</h3><p>The French chart of accounts</p>
+          <p class="links"><a href="pcg/">Support</a><a href="pcg/privacy.html">Privacy policy</a></p></div>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/app/id6758005157" aria-label="Plan Comptable Général on the App Store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Questions or feedback? Write to <a href="mailto:little.big69@icloud.com">little.big69@icloud.com</a>.</p>
+  <p class="links"><a href="./">Home</a><a href="terms.html">Terms of use</a></p>
+  <p>© 2026 Little Big</p>
+</footer>
+</body>
+</html>
