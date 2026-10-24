@@ -181,6 +181,10 @@
       if (new URL(link.href).hostname !== store) link.remove();
       else link.classList.remove('ghost'); // The only store left gets the main button style
     }
+    // Inside an app, stay on this filtered list: the home page shows both stores.
+    document.querySelector('.brand').removeAttribute('href');
+    document.querySelector('footer a[href="./"]').remove();
+    document.querySelector('.nav nav a').href = 'apps.html' + location.search;
     document.querySelector('.intro p').textContent = store === 'apps.apple.com'
       ? 'Everything little big makes for iPhone and iPad.'
       : 'Everything little big makes for Android.';
